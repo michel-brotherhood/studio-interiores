@@ -17,13 +17,13 @@ export default function Header() {
   }, []);
 
   const leftLinks = [
-    { href: "/projetos", label: "Portfolio" },
-    { href: "/loja", label: "Shop" },
+    { href: "/", label: "Início" },
+    { href: "/projetos", label: "Produtos" },
   ];
 
   const rightLinks = [
-    { href: "/sobre", label: "About us" },
-    { href: "/contato", label: "Contact us" },
+    { href: "/sobre", label: "Sobre" },
+    { href: "/contato", label: "Contato" },
   ];
 
   return (
@@ -55,16 +55,13 @@ export default function Header() {
 
           {/* Logo - Centered */}
           <Link href="/">
-            <span
-              className={`text-xl font-bold transition-colors cursor-pointer ${
-                isScrolled ? "text-foreground" : "text-white"
-              }`}
-            >
-              Estúdio
-              <span className={isScrolled ? "text-foreground" : "text-white"}>
-                Interiores
-              </span>
-            </span>
+            <div className="flex items-center cursor-pointer">
+              <img
+                src="/logo-maxi.webp"
+                alt="Maxi Decorações"
+                className="h-12 md:h-16 w-auto"
+              />
+            </div>
           </Link>
 
           {/* Right Navigation */}

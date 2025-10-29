@@ -89,41 +89,49 @@ export default function ProjetoDetalhe() {
                   {project.description}
                 </p>
 
-                <h3 className="text-xl font-bold text-foreground mb-4">
-                  Destaques
-                </h3>
-                <ul className="space-y-3 mb-12">
-                  {project.highlights.map((highlight, index) => (
-                    <li key={index} className="flex gap-3">
-                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
-                        <Check size={14} className="text-accent" strokeWidth={3} />
-                      </div>
-                      <span className="text-muted-foreground">{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
+                {project.highlights && project.highlights.length > 0 && (
+                  <>
+                    <h3 className="text-xl font-bold text-foreground mb-4">
+                      Destaques
+                    </h3>
+                    <ul className="space-y-3 mb-12">
+                      {project.highlights.map((highlight, index) => (
+                        <li key={index} className="flex gap-3">
+                          <div className="flex-shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                            <Check size={14} className="text-accent" strokeWidth={3} />
+                          </div>
+                          <span className="text-muted-foreground">{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
 
                 {/* Gallery */}
-                <h3 className="text-xl font-bold text-foreground mb-6">
-                  Galeria de imagens
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {project.gallery.slice(1).map((image, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                      className="rounded-2xl overflow-hidden shadow-soft"
-                    >
-                      <img
-                        src={image}
-                        alt={`${project.title} - Imagem ${index + 2}`}
-                        className="w-full aspect-[4/3] object-cover"
-                      />
-                    </motion.div>
-                  ))}
-                </div>
+                {project.gallery && project.gallery.length > 1 && (
+                  <>
+                    <h3 className="text-xl font-bold text-foreground mb-6">
+                      Galeria de imagens
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {project.gallery.slice(1).map((image, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                          className="rounded-2xl overflow-hidden shadow-soft"
+                        >
+                          <img
+                            src={image}
+                            alt={`${project.title} - Imagem ${index + 2}`}
+                            className="w-full aspect-[4/3] object-cover"
+                          />
+                        </motion.div>
+                      ))}
+                    </div>
+                  </>
+                )}
               </motion.div>
             </div>
 

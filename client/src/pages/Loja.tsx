@@ -59,12 +59,14 @@ export default function Loja() {
                 <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-accent transition-colors">
                   {product.name}
                 </h3>
-                <p className="text-muted-foreground mb-3">
-                  A partir de{" "}
-                  <span className="font-semibold text-foreground">
-                    R$ {product.price_from.toLocaleString("pt-BR")}
-                  </span>
-                </p>
+                {product.price_from && (
+                  <p className="text-muted-foreground mb-3">
+                    A partir de{" "}
+                    <span className="font-semibold text-foreground">
+                      R$ {product.price_from.toLocaleString("pt-BR")}
+                    </span>
+                  </p>
+                )}
                 <div className="flex flex-wrap gap-2">
                   {product.tags.map((tag, tagIndex) => (
                     <span

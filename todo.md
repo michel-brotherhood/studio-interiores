@@ -91,3 +91,15 @@
 - [x] Remover âncoras aninhadas no Header (Link já renderiza <a>)
 - [x] Corrigir âncoras aninhadas no PortfolioGrid e StoreShowcase
 - [x] Corrigir âncoras aninhadas no Footer
+
+## Customização para Maxi Decorações
+- [x] Traduzir todo o conteúdo para português (em progresso)
+- [x] Substituir logo pelo logo da Maxi Decorações
+- [x] Adicionar favicon da Maxi Decorações
+- [x] Atualizar conteúdo com informações reais da empresa
+- [x] Ajustar paleta de cores para laranja (#E67E22) da marca
+- [x] Adicionar informações das 6 lojas
+- [x] Incluir produtos: Tecidos & Cortinas, Pisos & Carpetes, Papéis de Parede
+- [x] Adicionar seção de FAQ
+- [x] Incluir depoimentos de clientes
+- [x] Adicionar métricas: 30+ anos, 5000+ projetos, 100% satisfação

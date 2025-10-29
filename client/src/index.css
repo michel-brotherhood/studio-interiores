@@ -45,11 +45,11 @@
 }
 
 :root {
-  /* Brand colors - Estúdio de Interiores (Decoraa style) */
-  --brand-primary: 26 26 26; /* #1A1A1A - Almost black */
-  --brand-accent: 124 58 237; /* #7C3AED - purple-600 */
+  /* Brand colors - Maxi Decorações */
+  --brand-primary: 27 80 52; /* #E67E22 - Laranja Maxi */
+  --brand-accent: 27 80 52; /* #E67E22 - Laranja Maxi */
   
-  --primary: 26 26 26;
+  --primary: 27 80 52; /* Laranja Maxi #E67E22 */
   --primary-foreground: 255 255 255;
   --sidebar-primary: var(--color-purple-600);
   --sidebar-primary-foreground: var(--color-purple-50);
@@ -69,7 +69,7 @@
   --secondary-foreground: 26 26 26;
   --muted: 240 238 235; /* Slightly darker off-white */
   --muted-foreground: 115 115 115; /* Medium gray */
-  --accent: 26 26 26;
+  --accent: 27 80 52; /* Laranja Maxi */
   --accent-foreground: 255 255 255;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
