@@ -71,3 +71,17 @@
 ## Documentação
 - [x] README com instruções de edição de conteúdo
 - [x] README com instruções de troca de paleta
+
+## Ajustes para Ficar Igual à Referência Decoraa
+- [x] Mudar hero para imagem de fundo real (sem gradiente)
+- [x] Alterar background geral de branco para off-white/bege (#F5F3F0)
+- [x] Redesenhar cards de projeto com bordas coloridas (sem sombras)
+- [x] Centralizar logo no header
+- [x] Redistribuir navegação do header (links à esquerda e direita do logo)
+- [x] Ajustar métricas para grid de 5 colunas com labels acima dos números
+- [x] Aumentar espaçamento vertical entre seções
+- [x] Simplificar seção About (texto centralizado, sem elementos decorativos)
+- [x] Remover gradientes e elementos decorativos (blobs)
+- [x] Ajustar tipografia para fonte mais neutra
+- [x] Reduzir tamanho dos títulos para proporções mais elegantes
+- [x] Adicionar mais espaço em branco (breathing room)

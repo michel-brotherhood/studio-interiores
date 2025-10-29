@@ -9,45 +9,37 @@ import { faqs } from "@/data/content";
 
 export default function FAQAccordion() {
   return (
-    <section className="section-spacing bg-background">
+    <section className="py-24 bg-background">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto"
+          className="mb-16"
         >
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-foreground mb-4">Perguntas frequentes</h2>
-            <p className="text-lg text-muted-foreground">
-              Tire suas dúvidas sobre nossos serviços e processo de trabalho.
-            </p>
-          </div>
+          <h2 className="text-5xl md:text-6xl font-bold text-foreground">
+            Have any doubts?
+          </h2>
+        </motion.div>
 
-          {/* Accordion */}
-          <Accordion type="single" collapsible className="space-y-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="max-w-3xl"
+        >
+          <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-              >
-                <AccordionItem
-                  value={`item-${index}`}
-                  className="bg-muted/30 rounded-2xl px-6 border-none"
-                >
-                  <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              </motion.div>
+              <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionTrigger className="text-left text-lg font-semibold">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
             ))}
           </Accordion>
         </motion.div>

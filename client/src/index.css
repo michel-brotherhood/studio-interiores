@@ -45,12 +45,12 @@
 }
 
 :root {
-  /* Brand colors - Estúdio de Interiores */
-  --brand-primary: 15 23 42; /* #0F172A - slate-900 */
+  /* Brand colors - Estúdio de Interiores (Decoraa style) */
+  --brand-primary: 26 26 26; /* #1A1A1A - Almost black */
   --brand-accent: 124 58 237; /* #7C3AED - purple-600 */
   
-  --primary: var(--color-slate-900);
-  --primary-foreground: var(--color-slate-50);
+  --primary: 26 26 26;
+  --primary-foreground: 255 255 255;
   --sidebar-primary: var(--color-purple-600);
   --sidebar-primary-foreground: var(--color-purple-50);
   --chart-1: var(--color-purple-300);
@@ -58,30 +58,30 @@
   --chart-3: var(--color-purple-600);
   --chart-4: var(--color-purple-700);
   --chart-5: var(--color-purple-800);
-  --radius: 1rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.141 0.005 285.823);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.623 0.214 259.815);
-  --accent-foreground: oklch(1 0 0);
+  --radius: 0.5rem;
+  --background: 245 243 240; /* #F5F3F0 - Off-white/Beige like Decoraa */
+  --foreground: 26 26 26; /* #1A1A1A */
+  --card: 255 255 255; /* White cards */
+  --card-foreground: 26 26 26;
+  --popover: 255 255 255;
+  --popover-foreground: 26 26 26;
+  --secondary: 240 238 235;
+  --secondary-foreground: 26 26 26;
+  --muted: 240 238 235; /* Slightly darker off-white */
+  --muted-foreground: 115 115 115; /* Medium gray */
+  --accent: 26 26 26;
+  --accent-foreground: 255 255 255;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  --border: 230 228 225; /* Subtle border */
+  --input: 230 228 225;
+  --ring: 26 26 26;
+  --sidebar: 245 243 240;
+  --sidebar-foreground: 26 26 26;
+  --sidebar-accent: 240 238 235;
+  --sidebar-accent-foreground: 26 26 26;
+  --sidebar-border: 230 228 225;
+  --sidebar-ring: 26 26 26;
 }
 
 .dark {

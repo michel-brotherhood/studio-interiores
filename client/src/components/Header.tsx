@@ -1,111 +1,122 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { href: "/projetos", label: "Portfólio" },
-    { href: "/#como-trabalhamos", label: "Como trabalhamos" },
-    { href: "/loja", label: "Loja" },
-    { href: "/contato", label: "Contato" },
+  const leftLinks = [
+    { href: "/projetos", label: "Portfolio" },
+    { href: "/loja", label: "Shop" },
+  ];
+
+  const rightLinks = [
+    { href: "/contato", label: "About us" },
+    { href: "/contato", label: "Contact us" },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-soft"
+          ? "bg-background/95 backdrop-blur-sm border-b border-border"
           : "bg-transparent"
       }`}
     >
       <div className="container">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href="/">
-            <a className="text-2xl font-bold tracking-tight hover:opacity-80 transition-opacity">
-              <span className="text-foreground">Estúdio</span>
-              <span className="text-accent ml-1">Interiores</span>
-            </a>
-          </Link>
-
-          {/* Desktop Navigation */}
+          {/* Left Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+            {leftLinks.map((link) => (
               <Link key={link.href} href={link.href}>
-                <a className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
+                <a
+                  className={`text-sm font-medium transition-colors ${
+                    isScrolled
+                      ? "text-foreground hover:text-foreground/70"
+                      : "text-white hover:text-white/70"
+                  } ${location === link.href ? "underline underline-offset-4" : ""}`}
+                >
                   {link.label}
                 </a>
               </Link>
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Link href="/contato">
-              <Button size="lg" className="font-semibold">
-                Começar agora
-              </Button>
-            </Link>
-          </div>
+          {/* Logo - Centered */}
+          <Link href="/">
+            <a
+              className={`text-xl font-bold transition-colors ${
+                isScrolled ? "text-foreground" : "text-white"
+              }`}
+            >
+              Estúdio
+              <span className={isScrolled ? "text-foreground" : "text-white"}>
+                Interiores
+              </span>
+            </a>
+          </Link>
+
+          {/* Right Navigation */}
+          <nav className="hidden md:flex items-center gap-8">
+            {rightLinks.map((link) => (
+              <Link key={link.href} href={link.href}>
+                <a
+                  className={`text-sm font-medium transition-colors ${
+                    isScrolled
+                      ? "text-foreground hover:text-foreground/70"
+                      : "text-white hover:text-white/70"
+                  } ${location === link.href ? "underline underline-offset-4" : ""}`}
+                >
+                  {link.label}
+                </a>
+              </Link>
+            ))}
+          </nav>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-foreground"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            {mobileMenuOpen ? (
+              <X className={isScrolled ? "text-foreground" : "text-white"} />
+            ) : (
+              <Menu className={isScrolled ? "text-foreground" : "text-white"} />
+            )}
+          </Button>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-background border-t border-border"
-          >
-            <nav className="container py-6 flex flex-col gap-4">
-              {navLinks.map((link) => (
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden pb-6 bg-background border-t border-border mt-2">
+            <nav className="flex flex-col gap-4 pt-4">
+              {[...leftLinks, ...rightLinks].map((link) => (
                 <Link key={link.href} href={link.href}>
                   <a
-                    className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors py-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-sm font-medium text-foreground hover:text-foreground/70"
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.label}
                   </a>
                 </Link>
               ))}
-              <Link href="/contato">
-                <Button
-                  size="lg"
-                  className="w-full font-semibold mt-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Começar agora
-                </Button>
-              </Link>
             </nav>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
+      </div>
     </header>
   );
 }
