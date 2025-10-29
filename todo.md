@@ -85,3 +85,7 @@
 - [x] Ajustar tipografia para fonte mais neutra
 - [x] Reduzir tamanho dos títulos para proporções mais elegantes
 - [x] Adicionar mais espaço em branco (breathing room)
+
+## Bugs Reportados
+- [x] Corrigir chaves duplicadas no Header (rightLinks com /contato duplicado)
+- [x] Remover âncoras aninhadas no Header (Link já renderiza <a>)

@@ -22,7 +22,7 @@ export default function Header() {
   ];
 
   const rightLinks = [
-    { href: "/contato", label: "About us" },
+    { href: "/sobre", label: "About us" },
     { href: "/contato", label: "Contact us" },
   ];
 
@@ -40,23 +40,23 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-8">
             {leftLinks.map((link) => (
               <Link key={link.href} href={link.href}>
-                <a
-                  className={`text-sm font-medium transition-colors ${
+                <span
+                  className={`text-sm font-medium transition-colors cursor-pointer ${
                     isScrolled
                       ? "text-foreground hover:text-foreground/70"
                       : "text-white hover:text-white/70"
                   } ${location === link.href ? "underline underline-offset-4" : ""}`}
                 >
                   {link.label}
-                </a>
+                </span>
               </Link>
             ))}
           </nav>
 
           {/* Logo - Centered */}
           <Link href="/">
-            <a
-              className={`text-xl font-bold transition-colors ${
+            <span
+              className={`text-xl font-bold transition-colors cursor-pointer ${
                 isScrolled ? "text-foreground" : "text-white"
               }`}
             >
@@ -64,22 +64,22 @@ export default function Header() {
               <span className={isScrolled ? "text-foreground" : "text-white"}>
                 Interiores
               </span>
-            </a>
+            </span>
           </Link>
 
           {/* Right Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {rightLinks.map((link) => (
               <Link key={link.href} href={link.href}>
-                <a
-                  className={`text-sm font-medium transition-colors ${
+                <span
+                  className={`text-sm font-medium transition-colors cursor-pointer ${
                     isScrolled
                       ? "text-foreground hover:text-foreground/70"
                       : "text-white hover:text-white/70"
                   } ${location === link.href ? "underline underline-offset-4" : ""}`}
                 >
                   {link.label}
-                </a>
+                </span>
               </Link>
             ))}
           </nav>
@@ -103,14 +103,14 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden pb-6 bg-background border-t border-border mt-2">
             <nav className="flex flex-col gap-4 pt-4">
-              {[...leftLinks, ...rightLinks].map((link) => (
-                <Link key={link.href} href={link.href}>
-                  <a
-                    className="text-sm font-medium text-foreground hover:text-foreground/70"
+              {[...leftLinks, ...rightLinks].map((link, index) => (
+                <Link key={`${link.href}-${index}`} href={link.href}>
+                  <span
+                    className="text-sm font-medium text-foreground hover:text-foreground/70 cursor-pointer"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.label}
-                  </a>
+                  </span>
                 </Link>
               ))}
             </nav>
