@@ -38,7 +38,7 @@ export default function PortfolioGrid() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
               <Link href={`/projetos/${project.slug}`}>
-                <a className="group block">
+                <div className="group block cursor-pointer">
                   {/* Image with colored border */}
                   <div
                     className={`relative overflow-hidden mb-4 border-4 ${
@@ -61,7 +61,7 @@ export default function PortfolioGrid() {
                       {project.title}
                     </h3>
                   </div>
-                </a>
+                </div>
               </Link>
             </motion.div>
           ))}
@@ -75,9 +75,9 @@ export default function PortfolioGrid() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <Link href="/projetos">
-            <a className="inline-block text-sm font-medium text-foreground hover:text-foreground/70 transition-colors underline underline-offset-4">
+            <span className="inline-block text-sm font-medium text-foreground hover:text-foreground/70 transition-colors underline underline-offset-4 cursor-pointer">
               View all projects
-            </a>
+            </span>
           </Link>
         </motion.div>
       </div>

@@ -37,7 +37,7 @@ export default function StoreShowcase() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
               <Link href="/loja">
-                <a className="group block">
+                <div className="group block cursor-pointer">
                   <div
                     className={`relative overflow-hidden mb-4 border-4 ${
                       borderColors[index % borderColors.length]
@@ -52,7 +52,7 @@ export default function StoreShowcase() {
                   <h3 className="text-lg font-bold text-foreground group-hover:text-foreground/70 transition-colors">
                     {product.name}
                   </h3>
-                </a>
+                </div>
               </Link>
             </motion.div>
           ))}
