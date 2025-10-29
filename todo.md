@@ -90,3 +90,4 @@
 - [x] Corrigir chaves duplicadas no Header (rightLinks com /contato duplicado)
 - [x] Remover âncoras aninhadas no Header (Link já renderiza <a>)
 - [x] Corrigir âncoras aninhadas no PortfolioGrid e StoreShowcase
+- [x] Corrigir âncoras aninhadas no Footer

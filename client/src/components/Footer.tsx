@@ -25,10 +25,10 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/">
-              <a className="text-2xl font-bold tracking-tight inline-block mb-4">
+              <span className="text-2xl font-bold tracking-tight inline-block mb-4 cursor-pointer">
                 <span className="text-foreground">Estúdio</span>
                 <span className="text-accent ml-1">Interiores</span>
-              </a>
+              </span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
               Projetos de interiores que combinam estética, função e tecnologia
@@ -42,9 +42,9 @@ export default function Footer() {
             <nav className="flex flex-col gap-3">
               {footerLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
-                  <a className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <span className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
                     {link.label}
-                  </a>
+                  </span>
                 </Link>
               ))}
             </nav>
